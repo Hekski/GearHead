@@ -7,3 +7,4 @@
 - Redux Toolkit
 - React Router
 - Json Server
+- React Toastify
