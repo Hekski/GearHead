@@ -8,3 +8,4 @@
 - React Router
 - Json Server
 - React Toastify
+- Axios
