@@ -1,7 +1,11 @@
+import PostsHome from "./postsHome";
 
 const Home = () => {
-  return <div>
-    Home</div>;
+  return(
+    <>
+      <PostsHome />
+    </>
+  );
 };
 
 export default Home;
