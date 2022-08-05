@@ -4,11 +4,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 const MainLayout = (props) => {
   return (
-
-    <Container className="mt-5 mb-5">{props.children}
-    <ToastContainer />
-    </Container>
-  )
+    <div className="bg-dark">
+      <Container>
+        {props.children}
+        <ToastContainer />
+      </Container>
+    </div>
+  );
 }
 
 export default MainLayout;
