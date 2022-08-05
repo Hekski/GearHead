@@ -1,5 +1,5 @@
-import { Container } from "react-bootstrap"
-import { ToastContainer } from "react-toastify"
+import { Container } from "react-bootstrap";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const MainLayout = (props) => {
@@ -11,6 +11,6 @@ const MainLayout = (props) => {
       </Container>
     </div>
   );
-}
+};
 
 export default MainLayout;
