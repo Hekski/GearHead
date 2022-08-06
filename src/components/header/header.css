@@ -2,3 +2,9 @@
     font-size: 2.4em;
     font-family: 'Medula One', cursive;
 }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
