@@ -14,9 +14,8 @@ const PostsHome = () => {
 
   const loadPosts = () => {
     const page = postsHome.articles.page + 1;
-          dispatch(postsRequest({ page, order: "desc", limit: "6" }));
-
-  }
+    dispatch(postsRequest({ page, order: "desc", limit: "6" }));
+  };
 
   useEffect(() => {
     if (postsHome.articles.items.length <= 0) {
@@ -83,14 +82,15 @@ const PostsHome = () => {
           </Spinner>
         </div>
       ) : null}
-      { !postsHome.articles.end && !postsHome.loading ? 
-            <Button variant="outline-light" onClick={()=> loadPosts()} className="mb-4">
-                Older News
-            </Button>
-
-      :null
-
-      }
+      {!postsHome.articles.end && !postsHome.loading ? (
+        <Button
+          variant="outline-light"
+          onClick={() => loadPosts()}
+          className="mb-4"
+        >
+          Older News
+        </Button>
+      ) : null}
     </>
   );
 };
