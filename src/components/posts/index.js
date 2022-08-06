@@ -21,13 +21,14 @@ const PostsComponent = () => {
       {posts.postById ? (
         <div className="container d-flex flex-column text-light">
           <h1 className="display-3">{posts.postById.title}</h1>
-            <img src={posts.postById.image} className="mb-1" />
-          <div className="row">
-          </div>
-          <small className="author">
+          <small className="author text-muted">
             Created by: <span>{posts.postById.author} - </span>
             <Moment format="DD MMMM">{posts.postById.createdAt}</Moment>
           </small>
+            <img src={posts.postById.image} className="mb-1" />
+          <div className="row">
+          </div>
+          <h3>{posts.postById.excerpt}</h3>
           <div className="mt-3 content">
             <div
               dangerouslySetInnerHTML={{
