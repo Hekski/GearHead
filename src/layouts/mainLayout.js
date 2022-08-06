@@ -5,8 +5,8 @@ import "./style.css";
 
 const MainLayout = (props) => {
   return (
-    <div className="bg-dark">
-      <div className="container">
+    <div className="d-flex justify-content-center bg-dark">
+      <div className="mainContainer">
         <Container>
           {props.children}
           <ToastContainer />
