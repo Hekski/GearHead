@@ -201,6 +201,31 @@
       "createdAt": "2020-07-22T12:59-0500"
     }
   ],
-  "newsletter": [],
+  "newsletter": [
+    {
+      "email": "qwe@gmail.com",
+      "id": 1
+    },
+    {
+      "email": "hasse@gmail.com",
+      "id": 2
+    },
+    {
+      "email": "henrik@test.se",
+      "id": 3
+    },
+    {
+      "email": "bro@gmail.com",
+      "id": 4
+    },
+    {
+      "email": "asd@gmail.com",
+      "id": 5
+    },
+    {
+      "email": "",
+      "id": 6
+    }
+  ],
   "contact": []
 }
