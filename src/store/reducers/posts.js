@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { postsRequest, requestById } from "../utils/thunk";
+import { postsRequest, requestById } from "../utils/thunks";
 
 export const postsSlice = createSlice({
   name: "posts",
