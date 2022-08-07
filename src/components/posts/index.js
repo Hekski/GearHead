@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Moment from "react-moment";
 import { Spinner } from "react-bootstrap";
 
-import { requestById } from "../../store/utils/thunk";
+import { requestById } from "../../store/utils/thunks";
 
 const PostsComponent = () => {
   const posts = useSelector((state) => state.posts);
