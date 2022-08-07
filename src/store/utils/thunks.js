@@ -15,24 +15,51 @@ export const postsRequest = createAsyncThunk(
       return {
         items: [...prevState.articles.items, ...response.data],
         page: page,
-        end: response.data.length === 0 ? true : false
+        end: response.data.length === 0 ? true : false,
       };
-
-    } catch (err) {}
+    } catch (err) {
+      throw err;
+    }
   }
 );
 
-export const requestById = createAsyncThunk(
-    'posts/requestById',
-    async (id) => {
-        try {
-            const response = await axios.get(
-                `${SERV_URL}/posts/${id}`
-            )
-            return response.data;
+export const requestById = createAsyncThunk("posts/requestById", async (id) => {
+  try {
+    const response = await axios.get(`${SERV_URL}/posts/${id}`);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+});
 
-        } catch (err) {
-            throw err
-        }
+export const addToNewsLetter = createAsyncThunk(
+  "users/addToNewsLetter",
+  async (data) => {
+    try {
+      const findUser = await axios.get(
+        `${SERV_URL}/newsletter?email=${data.email}`
+      );
+
+      if (!Array.isArray(findUser.data) || !findUser.data.length) {
+        const response = await axios({
+          method: "POST",
+          url: `${SERV_URL}/newsletter`,
+          data: {
+            email: data.email,
+          },
+        });
+
+        return {
+          newsletter: "added",
+          email: response.data,
+        };
+      } else {
+        return {
+          newsletter: "failed",
+        };
+      }
+    } catch (err) {
+      throw err;
     }
-)
+  }
+);
