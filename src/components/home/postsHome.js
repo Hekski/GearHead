@@ -2,7 +2,7 @@ import "./style.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-import { postsRequest } from "../../store/utils/thunk";
+import { postsRequest } from "../../store/utils/thunks";
 import Moment from "react-moment";
 
 import { Button, Spinner } from "react-bootstrap";
