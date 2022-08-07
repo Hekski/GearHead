@@ -5,15 +5,21 @@ import Moment from "react-moment";
 import { Spinner } from "react-bootstrap";
 
 import { requestById } from "../../store/utils/thunks";
+import { clearPostById } from "../../store/reducers/posts";
 
 const PostsComponent = () => {
   const posts = useSelector((state) => state.posts);
   const dispatch = useDispatch();
   let params = useParams();
 
-  console.log(posts);
   useEffect(() => {
     dispatch(requestById(params.id));
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearPostById());
+    };
   }, []);
 
   return (
@@ -25,9 +31,8 @@ const PostsComponent = () => {
             Created by: <span>{posts.postById.author} - </span>
             <Moment format="DD MMMM">{posts.postById.createdAt}</Moment>
           </small>
-            <img src={posts.postById.image} className="mb-1" />
-          <div className="row">
-          </div>
+          <img src={posts.postById.image} className="mb-1" alt="story" />
+          <div className="row"></div>
           <h3>{posts.postById.excerpt}</h3>
           <div className="mt-3 content">
             <div
