@@ -1,8 +1,9 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addToNewsLetter } from "../../store/utils/thunks";
 import { showToast } from "./tool";
+import { clearNewsLetter } from "../../store/reducers/users";
 
 const NewsLetter = () => {
   const textInput = useRef();
@@ -25,6 +26,7 @@ const NewsLetter = () => {
           textInput.current.value = "";
         }
       });
+    dispatch(clearNewsLetter());
   };
 
   return (

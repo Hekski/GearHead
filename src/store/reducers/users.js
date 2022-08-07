@@ -6,14 +6,17 @@ export const usersSlice = createSlice({
   initialState: {
     action: {},
   },
-  reducers: {},
+  reducers: {
+    clearNewsLetter: (state, action) => {
+      state.postById = {};
+    },
+  },
   extraReducers: (builder) => {
-    builder
-    .addCase(addToNewsLetter.fulfilled,(state,action)=>{
-      state.action = action.payload
-      
-    })
-  }
+    builder.addCase(addToNewsLetter.fulfilled, (state, action) => {
+      state.action = action.payload;
+    });
+  },
 });
 
+export const { clearNewsLetter } = usersSlice.actions;
 export default usersSlice.reducer;
