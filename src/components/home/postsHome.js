@@ -8,6 +8,7 @@ import Moment from "react-moment";
 import { Button, Spinner } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
+
 const PostsHome = () => {
   const dispatch = useDispatch();
   const postsHome = useSelector((state) => state.posts);
